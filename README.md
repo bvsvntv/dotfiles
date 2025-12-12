@@ -5,7 +5,7 @@
 Ensure that you have installed following prerequisites on your system:
 
 ```bash
-sudo xorg apt-get install git stow i3 i3status i3lock dmenu feh flameshot lxappearance gcc xclip vim
+sudo xorg apt-get install git stow i3 i3status i3lock dmenu feh flameshot lxappearance gcc xclip vim pulseaudio
 ```
 
 - Clone the dotfiles repository into your `$HOME`directory.

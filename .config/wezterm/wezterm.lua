@@ -5,7 +5,7 @@ config = {
 	-- General
 	initial_cols = 120,
 	initial_rows = 28,
-	font_size = 14,
+	font_size = 11,
 	line_height = 1.2,
 	font = wezterm.font("JetBrains Mono"),
 	color_scheme = "Gruber (base16)",
@@ -13,19 +13,14 @@ config = {
 	window_close_confirmation = "NeverPrompt",
 	enable_tab_bar = false,
 	window_padding = {
-		left = 4,
-		right = 0,
+		left = 2,
+		right = 2,
 		top = 2,
 		bottom = 0,
 	},
 
 	-- Key bindings
 	keys = {
-		{
-			key = "w",
-			mods = "CMD",
-			action = wezterm.action.CloseCurrentPane({ confirm = false }),
-		},
 		{
 			key = "f",
 			mods = "CTRL",

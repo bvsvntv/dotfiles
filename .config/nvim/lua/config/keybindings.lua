@@ -6,12 +6,13 @@ vim.keymap.set("n", "<Leader>w", "<cmd>w<CR>", opts)
 vim.keymap.set("n", "<Leader>q", "<cmd>wq<CR>", opts)
 
 -- Open netrw file explorer in vertical split with a width of 30
-vim.keymap.set(
-	"n",
-	"<Leader>fe",
-	"<cmd>wincmd v<bar>Ex<bar>vertical resize 30<CR>",
-	opts
-)
+vim.keymap.set("n", "<Leader>fe", function()
+	local dir = vim.fn.expand("%:p:h")
+	if dir == "" then
+		return
+	end
+	vim.cmd("vsplit | Ex " .. dir .. " | vertical resize 30")
+end, opts)
 vim.keymap.set("n", "<leader>ff", ":find ", { noremap = true })
 
 -- Move selected text up and down in visual mode

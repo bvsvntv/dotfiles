@@ -78,3 +78,8 @@ vim.keymap.set(
 	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
 	{ noremap = true }
 )
+
+-- Show diagnostics in a floating window
+vim.keymap.set("n", "<Leader>d", function()
+	vim.diagnostic.open_float()
+end)

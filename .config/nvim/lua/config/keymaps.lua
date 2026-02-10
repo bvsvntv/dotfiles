@@ -55,7 +55,7 @@ vim.keymap.set("n", "x", '"_x', opts)
 
 -- Window management
 vim.keymap.set("n", "<Leader>vs", "<C-w>v", opts) -- Split window vertically
-vim.keymap.set("n", "<Leader>hs", "<C-w>s", opts) -- Split window horizontally
+-- vim.keymap.set("n", "<Leader>hs", "<C-w>s", opts) -- Split window horizontally
 vim.keymap.set("n", "<Leader>cs", "<cmd>close<CR>", opts) -- Close the current split window
 vim.keymap.set("n", "<Leader>es", "<C-w>=", opts) -- Make all split windows equal size
 

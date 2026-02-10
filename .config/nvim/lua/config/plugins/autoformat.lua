@@ -1,64 +1,24 @@
 return {
 	{
-		"nvimtools/none-ls.nvim",
-		dependencies = {
-			"nvimtools/none-ls-extras.nvim",
-			"jayp0521/mason-null-ls.nvim",
-		},
+		"stevearc/conform.nvim",
 		config = function()
-			local null_ls = require("null-ls")
-			local formatting = null_ls.builtins.formatting
-
-			require("mason-null-ls").setup({
-				ensure_installed = {
-					"gofumpt",
-					"goimports_reviser",
-					"golines",
-					"prettier",
-					"shfmt",
-					"stylua",
+			require("conform").setup({
+				formatters_by_ft = {
+					lua = { "stylua" },
+					go = { "gofumpt", "goimports", "gofmt" },
+					javascript = { "prettier" },
+					typescript = { "prettier" },
 				},
-				automatic_installation = true,
-				handlers = {},
 			})
 
-			local augroup =
-				vim.api.nvim_create_augroup("LspFormattingNullLs", {})
-
-			null_ls.setup({
-				sources = {
-					formatting.gofumpt,
-					formatting.golines,
-					formatting.goimports_reviser,
-					formatting.prettier,
-					formatting.shfmt.with({ args = { "-i", "4" } }),
-					formatting.stylua,
-				},
-				on_attach = function(current_client, bufnr)
-					if
-						current_client.supports_method(
-							"textDocument/formatting"
-						)
-					then
-						vim.api.nvim_clear_autocmds({
-							group = augroup,
-							buffer = bufnr,
-						})
-						vim.api.nvim_create_autocmd("BufWritePre", {
-							group = augroup,
-							buffer = bufnr,
-							callback = function()
-								vim.lsp.buf.format({
-									filter = function(client)
-										return client.name == "null-ls"
-									end,
-									bufnr = bufnr,
-								})
-							end,
-						})
-					end
-				end,
-			})
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = "*",
+                callback = function(args)
+                    require("conform").format({ bufnr = args.buf })
+                end,
+            })
 		end,
 	},
 }
+
+

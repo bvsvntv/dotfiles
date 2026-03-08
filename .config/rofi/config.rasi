@@ -2,20 +2,20 @@ configuration {
 	modi:                       "drun,run,window";
     font: "JetBrainsMono Nerd Font Medium 10";
     show-icons:                 false;
-    display-drun:               "";
-    display-run:                "";
-    display-window:             "";
+    display-drun:               " ";
+    display-run:                " ";
+    display-window:             " ";
 	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
 	window-format:              "{w} · {c} · {t}";
 }
 
 * {
-    background:     #24273a;
-    background-alt: #363a4f;
-    foreground:     #cad3f5;
-    selected:       #8aadf4;
-    active:         #a6da95;
-    urgent:         #ed8796;
+    background:     #181818;
+    background-alt: #101010;
+    foreground:     #ffffff;
+    selected:       #96a6c8;
+    active:         #73c936;
+    urgent:         #f43841;
 
     border-colour:               var(selected);
     handle-colour:               var(selected);

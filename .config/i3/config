@@ -193,62 +193,57 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Catppuccin theme
-set $rosewater #f4dbd6
-set $flamingo #f0c6c6
-set $pink #f5bde6
-set $mauve #c6a0f6
-set $red #ed8796
-set $maroon #ee99a0
-set $peach #f5a97f
-set $yellow #eed49f
-set $green #a6da95
-set $teal #8bd5ca
-set $sky #91d7e3
-set $sapphire #7dc4e4
-set $blue #8aadf4
-set $lavender #b7bdf8
-set $text #cad3f5
-set $subtext1 #b8c0e0
-set $subtext0 #a5adcb
-set $overlay2 #939ab7
-set $overlay1 #8087a2
-set $overlay0 #6e738d
-set $surface2 #5b6078
-set $surface1 #494d64
-set $surface0 #363a4f
-set $base #24273a
-set $mantle #1e2030
-set $crust #181926
+# exporetd from https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
+set $gruber_darker_fg        #e4e4ef
+set $gruber_darker_fg+1      #f4f4ff
+set $gruber_darker_fg+2      #f5f5f5
+set $gruber_darker_white     #ffffff
+set $gruber_darker_black     #000000
+set $gruber_darker_bg_1      #101010
+set $gruber_darker_bg        #181818
+set $gruber_darker_bg+1      #282828
+set $gruber_darker_bg+2      #453d41
+set $gruber_darker_bg+3      #484848
+set $gruber_darker_bg+4      #52494e
+set $gruber_darker_red_1     #c73c3f
+set $gruber_darker_red       #f43841
+set $gruber_darker_red+1     #ff4f58
+set $gruber_darker_green     #73c936
+set $gruber_darker_yellow    #ffdd33
+set $gruber_darker_brown     #cc8c3c
+set $gruber_darker_quartz    #95a99f
+set $gruber_darker_niagara_2 #303540
+set $gruber_darker_niagara_1 #565f73
+set $gruber_darker_niagara   #96a6c8
+set $gruber_darker_wisteria  #9e95c7
 
-# target                 title     bg    text   indicator  border
-client.focused           $blue     $blue $base  $base      $base
-client.focused_inactive  $overlay0 $base $text  $rosewater $overlay0
-client.unfocused         $overlay0 $base $text  $rosewater $overlay0
-client.urgent            $peach    $base $peach $overlay0  $peach
-client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
-client.background        $base
+# class                  border                   background               text               indicator               child_border
+client.focused           $gruber_darker_wisteria  $gruber_darker_wisteria  $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_wisteria
+client.focused_inactive  $gruber_darker_bg        $gruber_darker_bg        $gruber_darker_fg  $gruber_darker_wisteria $gruber_darker_bg
+client.unfocused         $gruber_darker_bg+1      $gruber_darker_bg        $gruber_darker_fg  $gruber_darker_wisteria $gruber_darker_bg+1
+client.urgent            $gruber_darker_red       $gruber_darker_red       $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_red
+client.placeholder       $gruber_darker_wisteria  $gruber_darker_wisteria  $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_wisteria
+client.background        $gruber_darker_bg
 
 # Bar
 bar {
     colors {
-        background          $base
-        statusline          $text
-        separator           $base
-        focused_statusline  $text
-        focused_separator   $text
+        background $gruber_darker_bg
+        statusline $gruber_darker_fg
+        separator  $gruber_darker_bg+1
+        focused_statusline  $gruber_darker_fg
+        focused_separator   $gruber_darker_bg+3
 
-        # colorclass        border     bg           text
-        focused_workspace   $base      $blue        $base
-        active_workspace    $base      $base        $blue
-        inactive_workspace  $base      $surface1    $text
-        urgent_workspace    $base      $base        $surface1
-        binding_mode        $base      $base        $surface1
+        # colorclass        border                        bg                              text
+        focused_workspace   $gruber_darker_niagara_2      $gruber_darker_green            $gruber_darker_black
+        active_workspace    $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
+        inactive_workspace  $gruber_darker_niagara_2      $gruber_darker_yellow           $gruber_darker_black
+        urgent_workspace    $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
+        binding_mode        $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
     }
 
     position top
-    # tray_output primary
-    tray_output HDMI-2
+    tray_output primary
     strip_workspace_numbers yes
     status_command i3status --config $HOME/.config/i3/i3status.conf
 }
@@ -273,3 +268,4 @@ bindsym $mod+shift+x exec i3lock -c 24273a
 
 # Setup displays
 # exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --brightness 0.80 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off && notify-send "Display Setup" "Displays configured successfully"
+exec --no-startup-id xrandr --output HDMI-2 --brightness 0.75

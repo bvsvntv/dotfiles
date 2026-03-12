@@ -17,7 +17,7 @@ configuration {
     active:         #73c936;
     urgent:         #f43841;
 
-    border-colour:               var(selected);
+    border-colour:               var(background-alt);
     handle-colour:               var(selected);
     background-colour:           var(background);
     foreground-colour:           var(foreground);
@@ -28,11 +28,11 @@ configuration {
     urgent-foreground:           var(background);
     active-background:           var(active);
     active-foreground:           var(background);
-    selected-normal-background:  var(selected);
+    selected-normal-background:  var(active);
     selected-normal-foreground:  var(background);
     selected-urgent-background:  var(active);
     selected-urgent-foreground:  var(background);
-    selected-active-background:  var(urgent);
+    selected-active-background:  var(active);
     selected-active-foreground:  var(background);
     alternate-normal-background: var(background);
     alternate-normal-foreground: var(foreground);

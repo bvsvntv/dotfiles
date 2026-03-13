@@ -235,11 +235,11 @@ bar {
         focused_separator   $gruber_darker_bg+3
 
         # colorclass        border                        bg                              text
-        focused_workspace   $gruber_darker_niagara_2      $gruber_darker_green            $gruber_darker_black
-        active_workspace    $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
-        inactive_workspace  $gruber_darker_niagara_2      $gruber_darker_yellow           $gruber_darker_black
-        urgent_workspace    $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
-        binding_mode        $gruber_darker_niagara_2      $gruber_darker_niagara_2        $gruber_darker_niagara
+        focused_workspace   $gruber_darker_bg+1      $gruber_darker_green            $gruber_darker_black
+        active_workspace    $gruber_darker_bg+1      $gruber_darker_niagara_2        $gruber_darker_niagara
+        inactive_workspace  $gruber_darker_bg+1      $gruber_darker_yellow           $gruber_darker_black
+        urgent_workspace    $gruber_darker_bg+1      $gruber_darker_red              $gruber_darker_black
+        binding_mode        $gruber_darker_bg+1      $gruber_darker_niagara_2        $gruber_darker_niagara
     }
 
     position top

@@ -1,23 +1,26 @@
 # ui settings
+background-opacity = 0.8
+background-blur = 90
+macos-titlebar-style = hidden
 theme = Gruber Darker
 window-decoration = true
 window-padding-x = 4
+window-padding-balance = true
 cursor-style = block
-background-opacity = 0.8
-background-blur = 90
 adjust-cell-height = 15%
-macos-titlebar-style = transparent
 
 # font settings
 font-family = "JetBrainsMono Nerd Font"
-font-size = 17
+font-size = 16
 font-feature = +liga
 font-feature = +calt
 font-feature = +dlig
 
 # shell
 shell-integration = detect
-shell-integration-features = cursor,sudo,title
+shell-integration-features = no-cursor,sudo,title
 
 # others
 copy-on-select = clipboard
+window-save-state = always
+confirm-close-surface = false

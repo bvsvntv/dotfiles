@@ -1,9 +1,3 @@
-local utils = require("config.plugins.utils")
-
-vim.pack.add({
-	utils.get_full_github_url("tpope/vim-fugitive"),
-})
-
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set("n", "<Leader>gs", vim.cmd.Git, opts)

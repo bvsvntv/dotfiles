@@ -1,1 +1,2 @@
-require("config")
+require("bvsvntv.core")
+require("bvsvntv.pack")

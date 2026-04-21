@@ -2,6 +2,7 @@ local language_servers = {
 	"gopls",
 	"lua_ls",
 	"ts_ls",
+	"svelte",
 }
 
 for _, ls in ipairs(language_servers) do

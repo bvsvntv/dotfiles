@@ -1,15 +1,11 @@
-local utils = require("config.plugins.utils")
-
-vim.pack.add({
-	utils.get_full_github_url("stevearc/conform.nvim"),
-})
-
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
 		go = { "gofumpt", "goimports", "gofmt" },
 		javascript = { "prettier" },
 		typescript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescriptreact = { "prettier" },
 	},
 })
 

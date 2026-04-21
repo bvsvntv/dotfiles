@@ -1,7 +1,0 @@
-require("config.plugins.gitsigns")
-require("config.plugins.gruber_darker")
-require("config.plugins.vim_fugitive")
-require("config.plugins.conform")
-require("config.plugins.telescope")
-require("config.plugins.mini")
-require("config.plugins.treesitter")

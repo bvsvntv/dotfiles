@@ -1,9 +1,3 @@
-local utils = require("config.plugins.utils")
-
-vim.pack.add({
-	utils.get_full_github_url("nvim-treesitter/nvim-treesitter"),
-})
-
 require("nvim-treesitter").setup({
 	highlight = {
 		enable = true,

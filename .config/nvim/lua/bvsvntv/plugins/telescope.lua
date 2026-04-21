@@ -1,10 +1,3 @@
-local utils = require("config.plugins.utils")
-
-vim.pack.add({
-	utils.get_full_github_url("nvim-telescope/telescope.nvim"),
-	utils.get_full_github_url("nvim-lua/plenary.nvim"),
-})
-
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 

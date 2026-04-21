@@ -12,6 +12,10 @@
       "rev": "98a2e141981cbd5a194a97eae024bf55af854579",
       "src": "https://github.com/blazkowolf/gruber-darker.nvim"
     },
+    "mason.nvim": {
+      "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
     "mini.pairs": {
       "rev": "d5a29b6254dad07757832db505ea5aeab9aad43a",
       "src": "https://github.com/nvim-mini/mini.pairs"

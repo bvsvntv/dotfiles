@@ -16,12 +16,16 @@ vim.pack.add({
 	-- misc
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+
+	-- packages
+	{ src = "https://github.com/mason-org/mason.nvim" },
 })
 
 require("bvsvntv.plugins.conform")
 require("bvsvntv.plugins.gitsigns")
 require("bvsvntv.plugins.gruber_darker")
 require("bvsvntv.plugins.lsp")
+require("bvsvntv.plugins.mason")
 require("bvsvntv.plugins.mini")
 require("bvsvntv.plugins.telescope")
 require("bvsvntv.plugins.treesitter")

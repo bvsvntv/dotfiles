@@ -17,7 +17,7 @@ brew analytics off
 brew update
 
 echo "> installing formulae..."
-brew install git stow neovim tmux jq btop
+brew install git stow neovim tmux jq btop docker docker-compose docker-completion
 echo "[ ok ] formulae installation complete..."
 
 echo "> installing casks..."

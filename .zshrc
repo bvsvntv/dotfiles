@@ -13,3 +13,10 @@ export PATH=$PATH:~/go/bin
 
 # ghcup-env
 [ -f "/Users/basanta/.ghcup/env" ] && . "/Users/basanta/.ghcup/env"
+
+# bun completions
+[ -s "/Users/basanta/.bun/_bun" ] && source "/Users/basanta/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -36,6 +36,10 @@
       "rev": "4d0f5e0e7f69071e315515c385fab2a4eff07b3d",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "undotree": {
+      "rev": "6fa6b57cda8459e1e4b2ca34df702f55242f4e4d",
+      "src": "https://github.com/mbbill/undotree"
+    },
     "vim-fugitive": {
       "rev": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
       "src": "https://github.com/tpope/vim-fugitive"

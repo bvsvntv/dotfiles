@@ -16,6 +16,7 @@ vim.pack.add({
 	-- misc
 	{ src = "https://github.com/nvim-mini/mini.pairs" },
 	{ src = "https://github.com/stevearc/conform.nvim" },
+	{ src = "https://github.com/mbbill/undotree" },
 
 	-- packages
 	{ src = "https://github.com/mason-org/mason.nvim" },
@@ -31,3 +32,4 @@ require("bvsvntv.plugins.mini")
 require("bvsvntv.plugins.telescope")
 require("bvsvntv.plugins.treesitter")
 require("bvsvntv.plugins.vim_fugitive")
+require("bvsvntv.plugins.undotree")

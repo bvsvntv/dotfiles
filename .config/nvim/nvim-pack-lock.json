@@ -43,6 +43,10 @@
     "vim-fugitive": {
       "rev": "61b51c09b7c9ce04e821f6cf76ea4f6f903e3cf4",
       "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vimtex": {
+      "rev": "0f42a5130432d4af2e6fd21fb93a76915ff1f090",
+      "src": "https://github.com/lervag/vimtex"
     }
   }
 }

@@ -20,6 +20,9 @@ vim.pack.add({
 
 	-- packages
 	{ src = "https://github.com/mason-org/mason.nvim" },
+
+	-- latex
+	{ src = "https://github.com/lervag/vimtex" },
 })
 
 require("bvsvntv.plugins.lsp.mason")
@@ -32,4 +35,5 @@ require("bvsvntv.plugins.mini")
 require("bvsvntv.plugins.telescope")
 require("bvsvntv.plugins.treesitter")
 require("bvsvntv.plugins.vim_fugitive")
+require("bvsvntv.plugins.vimtex")
 require("bvsvntv.plugins.undotree")

@@ -4,6 +4,7 @@ vim.lsp.enable({
 	"lua_ls",
 	"ts_ls",
 	"svelte",
+	"harper",
 })
 
 -- Augroup to avoid duplicates on reload

@@ -1,5 +1,6 @@
 local language_servers = {
 	"bashls",
+	"clangd",
 	"cssls",
 	"dockerls",
 	"gopls",

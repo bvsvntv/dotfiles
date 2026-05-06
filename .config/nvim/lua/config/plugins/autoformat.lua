@@ -10,6 +10,8 @@ return {
 					javascriptreact = { "prettier" },
 					typescript = { "prettier" },
 					typescriptreact = { "prettier" },
+					c = { "clang-format" },
+					markdown = { "prettier" },
 				},
 			})
 

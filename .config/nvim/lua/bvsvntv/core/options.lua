@@ -4,10 +4,13 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.backspace = { "indent", "eol", "start" }
-vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.opt.formatoptions:remove({ "c", "r", "o" })
+vim.opt.pumheight = 8
+vim.opt.autocomplete = true
+vim.opt.complete = { ".", "w", "b", "o" }
+vim.opt.completeopt = { "menu", "menuone", "preview", "noselect" }
 
 -- Line numbers
 vim.opt.number = true

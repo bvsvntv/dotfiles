@@ -3,8 +3,8 @@ vim.opt.termguicolors = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.clipboard = "unnamedplus"
-vim.opt.backspace = "indent,eol,start"
-vim.opt.completeopt = "menuone,noselect"
+vim.opt.backspace = { "indent", "eol", "start" }
+vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.shortmess:append("c")
 vim.opt.iskeyword:append("-")
 vim.opt.formatoptions:remove({ "c", "r", "o" })

@@ -10,5 +10,6 @@
 [alias]
 	logtree = log --graph --decorate --pretty=oneline --abbrev-commit --all
     dwp = "!f() { git branch -D $(git branch | grep \"$1\"); }; f"
+    sp="!f() { git switch "$1" && git pull origin "$1"; }; f"
 [includeIf "gitdir:~/Work/"]
     path = ~/dotfiles/personal/git-config/.gitconfig_eb_pearls

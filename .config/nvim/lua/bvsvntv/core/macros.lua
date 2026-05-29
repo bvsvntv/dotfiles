@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.fn.setreg(
 			"l",
-			"yoconsole.log(' " .. esc .. "pa: ', " .. esc .. "pa);" .. esc .. ""
+			"yoconsole.log('" .. esc .. "pa: ', " .. esc .. "pa);" .. esc .. ""
 		)
 	end,
 })
@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.fn.setreg(
 			"l",
-			'yofmt.Println(" ' .. esc .. 'pa: ", ' .. esc .. "pa)" .. esc
+			'yofmt.Println("' .. esc .. 'pa: ", ' .. esc .. "pa)" .. esc
 		)
 	end,
 })

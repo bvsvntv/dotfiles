@@ -7,3 +7,5 @@
     conflictStyle = diff3
 [alias]
     logtree = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[core]
+	excludefile = /Users/basanta/.gitignore_global

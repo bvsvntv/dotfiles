@@ -20,3 +20,6 @@ export PATH=$PATH:~/go/bin
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# user-installed executables
+export PATH="$HOME/.local/bin:$PATH"

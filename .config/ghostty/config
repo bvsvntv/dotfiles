@@ -7,6 +7,7 @@ window-decoration = true
 window-padding-x = 4
 window-padding-balance = true
 cursor-style = block
+cursor-style-blink = true
 adjust-cell-height = 15%
 
 # font settings
@@ -24,3 +25,5 @@ shell-integration-features = no-cursor,sudo,title
 copy-on-select = clipboard
 window-save-state = always
 confirm-close-surface = false
+
+custom-shader = shaders/cursor_tail.glsl

@@ -25,5 +25,6 @@ shell-integration-features = no-cursor,sudo,title
 copy-on-select = clipboard
 window-save-state = always
 confirm-close-surface = false
+macos-option-as-alt = true
 
 custom-shader = shaders/cursor_tail.glsl

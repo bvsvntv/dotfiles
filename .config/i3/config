@@ -193,6 +193,23 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# ----- THEME -----
+set $CANVAS          #101010
+set $SURFACE         #181818
+set $SURFACE_RAISED  #282828
+set $BORDER          #453d41
+set $BORDER_STRONG   #52494e
+set $TEXT            #e4e4ef
+set $TEXT_STRONG     #f4f4ff
+set $TEXT_MUTED      #95a99f
+set $ACCENT          #9e95c7
+set $ACCENT_DIM      #514d66
+set $SECONDARY       #96a6c8
+set $SECONDARY_SURFACE #303540
+set $SUCCESS         #73c936
+set $WARNING         #ffdd33
+set $DANGER          #f43841
+
 # exporetd from https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
 set $gruber_darker_fg        #e4e4ef
 set $gruber_darker_fg+1      #f4f4ff
@@ -217,33 +234,36 @@ set $gruber_darker_niagara_1 #565f73
 set $gruber_darker_niagara   #96a6c8
 set $gruber_darker_wisteria  #9e95c7
 
-# class                  border                   background               text               indicator               child_border
-client.focused           $gruber_darker_wisteria  $gruber_darker_wisteria  $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_wisteria
-client.focused_inactive  $gruber_darker_bg        $gruber_darker_bg        $gruber_darker_fg  $gruber_darker_wisteria $gruber_darker_bg
-client.unfocused         $gruber_darker_bg+1      $gruber_darker_bg        $gruber_darker_fg  $gruber_darker_wisteria $gruber_darker_bg+1
-client.urgent            $gruber_darker_red       $gruber_darker_red       $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_red
-client.placeholder       $gruber_darker_wisteria  $gruber_darker_wisteria  $gruber_darker_bg  $gruber_darker_wisteria $gruber_darker_wisteria
-client.background        $gruber_darker_bg
+# class                   border          background      text            indicator       child_border
+client.focused            $ACCENT         $ACCENT         $CANVAS         $ACCENT         $ACCENT
+client.focused_inactive   $BORDER         $BORDER         $TEXT           $ACCENT_DIM     $BORDER
+client.unfocused          $ACCENT_DIM     $SURFACE        $TEXT           $ACCENT_DIM     $ACCENT_DIM
+client.urgent             $DANGER         $DANGER         $CANVAS         $DANGER         $DANGER
+client.placeholder        $ACCENT_DIM     $ACCENT_DIM     $CANVAS         $ACCENT_DIM     $ACCENT_DIM
+client.background         $CANVAS
 
 # Bar
 bar {
     colors {
-        background $gruber_darker_bg
-        statusline $gruber_darker_fg
-        separator  $gruber_darker_bg+1
-        focused_statusline  $gruber_darker_fg
-        focused_separator   $gruber_darker_bg+3
+        background $SURFACE
+        statusline $TEXT
+        separator  $SECONDARY_SURFACE
 
-        # colorclass        border                        bg                              text
-        focused_workspace   $gruber_darker_bg+1      $gruber_darker_green            $gruber_darker_black
-        active_workspace    $gruber_darker_bg+1      $gruber_darker_niagara_2        $gruber_darker_niagara
-        inactive_workspace  $gruber_darker_bg+1      $gruber_darker_yellow           $gruber_darker_black
-        urgent_workspace    $gruber_darker_bg+1      $gruber_darker_red              $gruber_darker_black
-        binding_mode        $gruber_darker_bg+1      $gruber_darker_niagara_2        $gruber_darker_niagara
+        # Current workspace
+        focused_statusline  $TEXT
+        focused_separator   $ACCENT_DIM
+
+        # colorclass        border       bg                 text
+        focused_workspace   $BORDER      $ACCENT            $CANVAS
+        active_workspace    $BORDER      $SECONDARY         $CANVAS
+        inactive_workspace  $BORDER      $ACCENT_DIM        $TEXT
+        urgent_workspace    $BORDER      $DANGER            $CANVAS
+        binding_mode        $BORDER      $SECONDARY_SURFACE $SECONDARY
     }
 
     position top
     tray_output primary
+    workspace_buttons yes
     strip_workspace_numbers yes
     status_command i3status --config $HOME/.config/i3/i3status.conf
 }
@@ -266,6 +286,10 @@ bindsym shift+Print exec flameshot gui
 # Lock screen
 bindsym $mod+shift+x exec i3lock -c 24273a
 
+# Clipboard manager
+exec --no-startup-id copyq
+bindsym $mod+shift+v exec copyq toggle
+
 # Setup displays
 # exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --brightness 0.80 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off && notify-send "Display Setup" "Displays configured successfully"
-exec --no-startup-id xrandr --output HDMI-2 --brightness 0.75
+exec --no-startup-id xrandr --output HDMI-2 --brightness 0.70

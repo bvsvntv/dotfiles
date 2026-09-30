@@ -193,6 +193,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# exporetd from https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
 # ----- THEME -----
 set $CANVAS          #101010
 set $SURFACE         #181818
@@ -209,30 +210,6 @@ set $SECONDARY_SURFACE #303540
 set $SUCCESS         #73c936
 set $WARNING         #ffdd33
 set $DANGER          #f43841
-
-# exporetd from https://github.com/rexim/gruber-darker-theme/blob/master/gruber-darker-theme.el
-set $gruber_darker_fg        #e4e4ef
-set $gruber_darker_fg+1      #f4f4ff
-set $gruber_darker_fg+2      #f5f5f5
-set $gruber_darker_white     #ffffff
-set $gruber_darker_black     #000000
-set $gruber_darker_bg_1      #101010
-set $gruber_darker_bg        #181818
-set $gruber_darker_bg+1      #282828
-set $gruber_darker_bg+2      #453d41
-set $gruber_darker_bg+3      #484848
-set $gruber_darker_bg+4      #52494e
-set $gruber_darker_red_1     #c73c3f
-set $gruber_darker_red       #f43841
-set $gruber_darker_red+1     #ff4f58
-set $gruber_darker_green     #73c936
-set $gruber_darker_yellow    #ffdd33
-set $gruber_darker_brown     #cc8c3c
-set $gruber_darker_quartz    #95a99f
-set $gruber_darker_niagara_2 #303540
-set $gruber_darker_niagara_1 #565f73
-set $gruber_darker_niagara   #96a6c8
-set $gruber_darker_wisteria  #9e95c7
 
 # class                   border          background      text            indicator       child_border
 client.focused            $ACCENT         $ACCENT         $CANVAS         $ACCENT         $ACCENT
@@ -258,7 +235,7 @@ bar {
         active_workspace    $BORDER      $SECONDARY         $CANVAS
         inactive_workspace  $BORDER      $ACCENT_DIM        $TEXT
         urgent_workspace    $BORDER      $DANGER            $CANVAS
-        binding_mode        $BORDER      $SECONDARY_SURFACE $SECONDARY
+        binding_mode        $BORDER      $SECONDARY_SURFACE $TEXT
     }
 
     position top
@@ -268,6 +245,7 @@ bar {
     status_command i3status --config $HOME/.config/i3/i3status.conf
 }
 
+# General Settings
 focus_follows_mouse no
 
 # Set wallpaper
@@ -288,7 +266,9 @@ bindsym $mod+shift+x exec i3lock -c 24273a
 
 # Clipboard manager
 exec --no-startup-id copyq
-bindsym $mod+shift+v exec copyq toggle
+bindsym $mod+shift+v exec --no-startup-id sh -c 'copyq eval "menu()"'
+# centered floating window
+for_window [class="CopyQ"] floating enable, move position center
 
 # Setup displays
 # exec --no-startup-id xrandr --output eDP1 --primary --mode 1920x1080 --pos 1920x0 --rotate normal --output HDMI1 --brightness 0.80 --mode 1920x1080 --pos 0x0 --rotate normal --output DP1 --off --output DP2 --off --output DP3 --off --output DP4 --off && notify-send "Display Setup" "Displays configured successfully"
